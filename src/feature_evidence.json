@@ -1,0 +1,26 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-increase-the-maximum-allowed-lesson-video-upload-size-to-100-mb-in-the-frontend-validation-and-file-reading-utilities-and-update-all-user-facing-helper-validation-text-on-the-upload-lesson-page-to-reflect-the-new-100-mb-limit",
+      "featureTitle": "Increase the maximum allowed lesson video upload size to 100 MB in the frontend validation and file-reading utilities, and update all user-facing helper/validation text on the Upload Lesson page to reflect the new 100 MB limit.",
+      "files": [
+        "frontend/src/pages/UploadLessonPage.tsx",
+        "frontend/src/utils/fileToUint8Array.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

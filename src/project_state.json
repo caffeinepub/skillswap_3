@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Educational mobile app \"SkillSwap\" for learning and teaching skills via short video lessons, with Google (Gmail) sign-in and a learning-credit system.",
+  "architectural_notes": [
+    "Use Google OAuth for authentication (Gmail sign-in).",
+    "Maintain a credit ledger/balance per user; initialize to 100 credits on account creation and decrement on lesson consumption.",
+    "Set lesson video upload validation/limits to allow up to 100 MB per video."
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-ii-and-create-a-user-profile-on-first-successful-sign-in-because-direct-gmail-google-oauth-is-not-supported-provide-a-profile-field-where-a-user-may-optionally-enter-a-gmail-address-for-display-contact-not-for-authentication",
+      "title": "Implement user authentication using Internet Identity (II) and create a user profile on first successful sign-in. Because direct Gmail/Google OAuth is not supported, provide a profile field where a user may optionally enter a Gmail address for display/contact (not for authentication).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-learning-credits-system-initialize-each-new-user-with-100-learning-credits-deduct-a-defined-small-number-of-credits-when-a-user-watches-completes-a-lesson-prevent-credits-from-going-below-zero-and-block-lesson-completion-if-insufficient-credits",
+      "title": "Add a learning-credits system: initialize each new user with 100 learning credits; deduct a defined small number of credits when a user watches/completes a lesson; prevent credits from going below zero and block lesson completion if insufficient credits.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-lesson-entities-for-short-video-lessons-and-implement-browsing-and-playback-users-can-view-a-list-of-lessons-open-a-lesson-detail-view-and-play-the-video-in-app",
+      "title": "Create lesson entities for short video lessons and implement browsing and playback: users can view a list of lessons, open a lesson detail view, and play the video in-app.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enable-users-to-upload-short-videos-to-teach-skills-by-creating-new-lessons-with-attached-video-content-including-basic-validation-and-size-limits-suitable-for-canister-storage",
+      "title": "Enable users to upload short videos to teach skills by creating new lessons with attached video content, including basic validation and size limits suitable for canister storage.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-coherent-distinct-visual-theme-for-skillswap-across-the-app-layout-typography-and-color-system-suitable-for-a-mobile-first-experience-avoid-blue-purple-as-the-primary-palette",
+      "title": "Apply a coherent, distinct visual theme for SkillSwap across the app (layout, typography, and color system) suitable for a mobile-first experience; avoid blue/purple as the primary palette.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-brand-assets-and-render-them-in-the-ui-app-icon-and-wordmark-logo-from-frontend-public-assets-generated-do-not-serve-generated-images-via-the-backend",
+      "title": "Add generated static brand assets and render them in the UI (app icon and wordmark/logo) from frontend/public/assets/generated (do not serve generated images via the backend).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-maximum-allowed-lesson-video-upload-size-to-100-mb-in-the-frontend-validation-and-file-reading-utilities-and-update-all-user-facing-helper-validation-text-on-the-upload-lesson-page-to-reflect-the-new-100-mb-limit",
+      "title": "Increase the maximum allowed lesson video upload size to 100 MB in the frontend validation and file-reading utilities, and update all user-facing helper/validation text on the Upload Lesson page to reflect the new 100 MB limit.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Implement Google (Gmail) sign-in for users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add learning credits system: start each user with 100 credits and deduct a small number per lesson watched",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Enable users to watch short video lessons to learn skills",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Enable users to upload short videos to teach skills",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Increase maximum allowed uploaded lesson video size to 100 MB",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Increase the backend createLesson video size validation limit from 10 MB to 100 MB so that uploads accepted by the frontend are also accepted by the canister.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "SkillSwap",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

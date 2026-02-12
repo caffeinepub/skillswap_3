@@ -1,0 +1,23 @@
+{
+  "frontend/src/index.css": "Global styles with warm orange + charcoal OKLCH color system for light and dark modes, avoiding blue/purple as primary colors.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme tokens mapped to the warm SkillSwap palette and mobile-first container settings.",
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, authentication flow, profile setup modal, and layout with header and bottom navigation using properly named React components.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including lessons (get all, get one, create, complete) and user profile management.",
+  "frontend/src/hooks/useCurrentUserProfile.ts": "React Query hook for fetching the current user's profile with proper actor dependency gating to prevent modal flash.",
+  "frontend/src/utils/bigintFormat.ts": "Utility functions for formatting bigint values (credits, timestamps) into human-readable strings.",
+  "frontend/src/utils/fileToUint8Array.ts": "Helper functions for converting File objects to Uint8Array with size validation (100MB limit) and video file format checking (MP4/WebM/MOV).",
+  "frontend/src/components/layout/AppShell.tsx": "Reusable layout wrapper component providing consistent mobile-first padding and max-width constraints.",
+  "frontend/src/components/layout/AppHeader.tsx": "Sticky header component with brand logo, credit balance badge, and logout button.",
+  "frontend/src/components/layout/BottomNav.tsx": "Fixed bottom navigation bar for mobile-first navigation between Lessons, Upload, and Profile pages.",
+  "frontend/src/components/brand/BrandLogo.tsx": "Brand component rendering the SkillSwap icon and/or wordmark from generated static assets with responsive sizing.",
+  "frontend/src/components/auth/AuthButton.tsx": "Logout button component using Internet Identity hook with loading state and query cache clearing.",
+  "frontend/src/components/credits/CreditBalanceBadge.tsx": "Badge component displaying the user's current learning credit balance with coin icon.",
+  "frontend/src/components/profile/ProfileSetupModal.tsx": "Modal dialog for first-time profile creation collecting display name and optional Gmail address.",
+  "frontend/src/components/lessons/LessonCard.tsx": "Reusable lesson card component displaying lesson metadata with navigation to detail view.",
+  "frontend/src/components/lessons/VideoPlayer.tsx": "Video player component converting Uint8Array video bytes to blob URL for HTML5 video playback with proper type conversion to fix TypeScript compatibility.",
+  "frontend/src/pages/AuthPage.tsx": "Authentication landing page with brand logo, sign-in button, and feature highlights for unauthenticated users.",
+  "frontend/src/pages/LessonsPage.tsx": "Main lessons feed page displaying all available lessons in a scrollable grid with loading and empty states.",
+  "frontend/src/pages/LessonDetailPage.tsx": "Lesson detail page with video player, metadata, credit cost display, and completion action with validation.",
+  "frontend/src/pages/UploadLessonPage.tsx": "Upload form page for creating new lessons with title, description, credit cost, and video file input with 100MB validation and user-facing helper text.",
+  "frontend/src/pages/ProfilePage.tsx": "User profile page displaying personal information, credit balance, member since date, and editable name/gmail fields."
+}

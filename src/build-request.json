@@ -1,0 +1,67 @@
+{
+  "kind": "build_request",
+  "title": "Increase lesson video upload limit to 100MB",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "text": "Increase the maximum allowed lesson video upload size to 100 MB in the frontend validation and file-reading utilities, and update all user-facing helper/validation text on the Upload Lesson page to reflect the new 100 MB limit.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Can you change the uploading video size to 100 mb"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Selecting a valid video file up to 100 MB passes validation in validateVideoFile().",
+        "Selecting a video file larger than 100 MB is rejected with an error message that clearly states the 100 MB limit (English).",
+        "fileToUint8Array() allows reading files up to 100 MB by default (without requiring callers to pass a custom maxSizeBytes).",
+        "UploadLessonPage displays the correct max size (100MB) anywhere it currently mentions 10MB (e.g., CardDescription and helper text)."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Increase the backend createLesson video size validation limit from 10 MB to 100 MB so that uploads accepted by the frontend are also accepted by the canister.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Can you change the uploading video size to 100 mb"
+        ]
+      },
+      "acceptanceCriteria": [
+        "backend/main.mo createLesson() rejects videos larger than 100 MB and accepts videos up to 100 MB.",
+        "The backend trap/error message for oversized videos states the correct 100 MB limit (English).",
+        "No state migration (backend/migration.mo) is introduced for this change."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single-actor Motoko canister; keep logic in backend/main.mo.",
+    "Do not modify any files under frontend/src/components/ui or any paths listed as immutable in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "Implementing chunked/multipart uploads or resumable uploads.",
+    "Changing supported video formats (MP4/WebM/MOV) beyond what currently exists.",
+    "Adding new lesson metadata fields or changing lesson storage format beyond adjusting the size limit."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

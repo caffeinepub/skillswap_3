@@ -1,0 +1,33 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T03:43:25.704Z",
+  "summary": "Frontend utilities and at least one Upload Lesson page description were updated to a 100MB limit. Backend change to createLesson() size validation cannot be verified from the truncated backend diff, and it’s unclear whether *all* Upload Lesson helper/validation text mentions were updated due to truncation.",
+  "missing_requirements": [
+    {
+      "id": "REQ-8",
+      "requirement": "Increase the backend createLesson video size validation limit from 10 MB to 100 MB (including correct 100 MB error message) in backend/main.mo.",
+      "reason": "The backend diff is truncated before showing createLesson() and any size-limit validation/error message logic, so there is no evidence that the 10MB limit and its error message were updated to 100MB.",
+      "evidence": [
+        "backend/main.mo (truncated before createLesson implementation)"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Update all user-facing helper/validation text on the Upload Lesson page to reflect the new 100 MB limit anywhere it currently mentions 10MB.",
+      "reason": "One visible string was updated to “max 100MB”, but the file is truncated and may contain additional helper/validation text (including possible remaining 10MB mentions) that cannot be verified.",
+      "evidence": [
+        "frontend/src/pages/UploadLessonPage.tsx (truncated; shows 'max 100MB' in CardDescription but remainder not visible)"
+      ]
+    }
+  ],
+  "hallucinated_features": [],
+  "confidence": 0.58,
+  "changed_files": [
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/src/pages/UploadLessonPage.tsx",
+    "frontend/src/utils/fileToUint8Array.ts",
+    "project_state.json"
+  ]
+}

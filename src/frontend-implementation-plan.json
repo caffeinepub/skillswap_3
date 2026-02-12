@@ -1,0 +1,29 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Increase lesson video upload limit to 100MB (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Raise lesson video upload size limit to 100MB in frontend validation/file-reading utilities and update Upload Lesson page helper text to reflect 100MB.",
+      "acceptanceCriteria": [
+        "Selecting a valid video file up to 100 MB passes validation in validateVideoFile().",
+        "Selecting a video file larger than 100 MB is rejected with an error message that clearly states the 100 MB limit (English).",
+        "fileToUint8Array() allows reading files up to 100 MB by default (without requiring callers to pass a custom maxSizeBytes).",
+        "UploadLessonPage displays the correct max size (100MB) anywhere it currently mentions 10MB (e.g., CardDescription and helper text)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/utils/fileToUint8Array.ts",
+          "operation": "modify",
+          "description": "Update the default maxSizeBytes in fileToUint8Array() from 10MB to 100MB and adjust the thrown error message formatting to clearly state a 100 MB limit when exceeded. Update validateVideoFile() size check from 10MB to 100MB and update the returned validation error text to say the file must be under 100 MB (English)."
+        },
+        {
+          "path": "frontend/src/pages/UploadLessonPage.tsx",
+          "operation": "modify",
+          "description": "Update all user-facing max-size helper text from 10MB to 100MB (including CardDescription and the video file helper paragraph) so the Upload Lesson page consistently communicates the new 100MB limit."
+        }
+      ]
+    }
+  ]
+}
